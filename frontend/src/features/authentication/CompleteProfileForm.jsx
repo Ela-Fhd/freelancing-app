@@ -52,17 +52,17 @@ function CompleteProfileForm() {
             id="freelancer"
             label="فریلنسر"
             name="role"
-            value="freelancer"
+            value="FREELANCER"
             onChange={(e) => setRole(e.target.value)}
-            checked={role === "freelancer"}
+            checked={role === "FREELANCER"}
           />
           <RadioInput
             id="owner"
             label="کارفرما"
             name="role"
-            value="owner"
+            value="OWNER"
             onChange={(e) => setRole(e.target.value)}
-            checked={role === "owner"}
+            checked={role === "OWNER"}
           />
         </div>
         <Button>ثبت اطلاعات</Button>
