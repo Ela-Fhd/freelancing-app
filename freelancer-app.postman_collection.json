@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "730820c4-5e74-4a7a-aa01-25e70a0a0c7d",
+		"name": "freelancer-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12162866"
+	},
+	"item": [
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "add new category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"programming\",\n    \"description\":\"web development\",\n    \"englishTitle\":\"programming\",\n    \"type\":\"project\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/category/add",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"category",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/category/update/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"category",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/category/remove/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"category",
+								"remove",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all categories",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get category by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/category/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/get-otp",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"get-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\":\"09033709193\",\r\n    \"otp\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/check-otp",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"check-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "complete profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"user-1 test\",\r\n    \"email\":\"user@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/complete-profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"complete-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "verify user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\":2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin/user/verify/:userId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"verify",
+										":userId"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "65368522d34d0a10c97b89ef"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all users",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "get user profile",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "owner",
+			"item": [
+				{
+					"name": "project",
+					"item": [
+						{
+							"name": "add new project",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/project/add",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"project",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "change project status",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\":\"CLOSED\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/project/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"project",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6536b90f221166b9592be87c"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get list of owner projects",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "get all projects",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "get one project",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "freelancer",
+			"item": [
+				{
+					"name": "proposal",
+					"item": [
+						{
+							"name": "get all proposal",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/proposal/list",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"proposal",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add new proposal",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"duration\":30,\n    \"description\":\"this is first proposal demo\",\n    \"price\":1000000,\n    \"projectId\" : \"6536b90f221166b9592be87c\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/proposal/add",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"proposal",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "change proposal status",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\":2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/proposal/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"proposal",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6536d4c36f32aaa5e6471ef0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get one proposal",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/proposal/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"proposal",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6536d4c36f32aaa5e6471ef0"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
