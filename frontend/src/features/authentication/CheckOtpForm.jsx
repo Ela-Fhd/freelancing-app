@@ -31,21 +31,15 @@ function CheckOtpForm({
     try {
       const { message, user } = await mutateAsync({ phoneNumber, otp });
       toast.success(message);
-      if (user.isActive) {
-        // push to panel based on role
-        if (user.role === "OWNER") {
-          navigate("/owner-panel");
-        }
-        if (user.role === "ADMIN") {
-          navigate("/admin-panel");
-        }
-        if (user.role === "FREELANCER") {
-          navigate("/freelencer-panel");
-        }
-      } else {
-        navigate("/complete-profile");
-        toast.remove("toast_otp_id");
+      toast.remove("toast_otp_id");
+      if (!user.isActive) return navigate("/complete-profile");
+      if (user.status !== 2) {
+        navigate("/");
+        toast("پروفایل شما در انتظار تایید است", { icon: "✅" });
+        return;
       }
+      if (user.role === "OWNER") return navigate("/owner-dashbord");
+      if (user.role === "FREELANCER") return navigate("/freelancer-dashbord");
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
@@ -119,7 +113,7 @@ function CheckOtpForm({
                 ارسال مجدد کد تایید
               </button>
             )}
-            <Button> {isPending ? <Loading /> : "تایید"}</Button>
+            <Button type="submit"> {isPending ? <Loading /> : "تایید"}</Button>
           </div>
         </form>
       </div>

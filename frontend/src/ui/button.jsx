@@ -1,8 +1,12 @@
 import React from "react";
 
-function Button({ color = "btn--green", children }) {
+function Button({ color = "btn--green", type, onClick, children }) {
   return (
-    <button type="submit" className={`btn ${color} w-full my-3`}>
+    <button
+      type={type}
+      className={`btn ${color} w-full my-3`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

@@ -19,7 +19,9 @@ function SendOtpForm({ phoneNumber, onChange, isSendOTP, onSendOtp }) {
             id="phone_number"
             label="لطفا شماره همراه خود را وارد کنید"
           />
-          <Button>{isSendOTP ? <Loading /> : "ارسال کد تایید"}</Button>
+          <Button type="submit">
+            {isSendOTP ? <Loading /> : "ارسال کد تایید"}
+          </Button>
         </div>
       </form>
     </>
