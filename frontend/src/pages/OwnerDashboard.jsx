@@ -1,7 +1,7 @@
 import React from "react";
 
-function Owner() {
+function OwnerDashboard() {
   return <div>Owner Page</div>;
 }
 
-export default Owner;
+export default OwnerDashboard;
