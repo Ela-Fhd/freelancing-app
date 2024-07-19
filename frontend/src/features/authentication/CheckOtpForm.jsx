@@ -38,8 +38,8 @@ function CheckOtpForm({
         toast("پروفایل شما در انتظار تایید است", { icon: "✅" });
         return;
       }
-      if (user.role === "OWNER") return navigate("/owner-dashbord");
-      if (user.role === "FREELANCER") return navigate("/freelancer-dashbord");
+      if (user.role === "OWNER") return navigate("/owner/dashboard");
+      if (user.role === "FREELANCER") return navigate("/freelancer/dashboard");
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }

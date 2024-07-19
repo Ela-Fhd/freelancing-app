@@ -11,7 +11,7 @@ const app = axios.create({
 // responses = > have error
 // if error === 401 => get new refresh token and access token with request to /user/refresh-token
 //then send request again to last request that return 401 error
-// for send 1 request for each error and avoid to falling in loop , we use error.response.config for get url request and _retry for setting send 1 request
+// for send 1 request for each error and avoid to falling in loop , we use "error.response.config" for get url request and _retry for setting send 1 request
 
 app.interceptors.request.use(
   (res) => res,

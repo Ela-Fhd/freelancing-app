@@ -84,6 +84,22 @@
   .badge--text {
     @apply bg-primary-900 md:bg-white text-white md:text-black rounded-full w-5 py-0.5 text-center text-xs inline-block;
   }
+
+  .badge {
+    @apply inline-block whitespace-nowrap rounded-xl px-2 py-0.5;
+  }
+  .badge--primary {
+    @apply bg-primary-900 text-white;
+  }
+  .badge--secondary {
+    @apply bg-secondary-200 text-secondary-600;
+  }
+  .badge--success {
+    @apply bg-green-500 text-white;
+  }
+  .badge--danger {
+    @apply bg-red-500 text-white;
+  }
 }
 
 /* @layer components {
@@ -155,7 +171,6 @@ body {
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  /* border: none; */
   outline: none;
   padding: 0;
   margin: 0;
