@@ -5,17 +5,13 @@ import Table from "../../ui/table";
 import ProjectsRow from "./ProjectsRow";
 
 function ProjectsTable() {
-  // const { isLoading, projects } = useOwnerProjects();
+  const { isLoading, projects } = useOwnerProjects();
 
   // if is loading ==> show isLoading component
-  // if projects array is empty and projects.length === 0 => show empty message to user / else show projects table
+  //  if projects array is empty and projects.length === 0 => show empty message to user / else show projects table
 
-  // if (isLoading) return <Loading />;
-  // if (projects.length) return <Empty resourceName="پروژه" />;
-
-  const projects = [
-    { _id: "123", title: "برنامه نویسی وب", description: "هیچی" },
-  ];
+  if (isLoading) return <Loading />;
+  if (!projects.length) return <Empty resourceName="پروژه" />;
 
   return (
     <Table>
@@ -35,7 +31,7 @@ function ProjectsTable() {
 
       <Table.Body>
         {projects.map((project, index) => (
-          <ProjectsRow project={project} index={index} />
+          <ProjectsRow project={project} index={index} key={project._id} />
         ))}
       </Table.Body>
     </Table>
