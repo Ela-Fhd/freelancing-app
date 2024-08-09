@@ -1,4 +1,3 @@
-import React from "react";
 import { ThreeDots } from "react-loader-spinner";
 
 function Loading({ width = "60", height = "40" }) {

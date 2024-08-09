@@ -1,5 +1,5 @@
 import { IoCloseCircleOutline } from "react-icons/io5";
-import useOutsideClick from "../hooks/useOutsideClick";
+import useOutsideClick from "@/hooks/useOutsideClick";
 
 function Modal({ open, close, title, children }) {
   const ref = useOutsideClick(close);

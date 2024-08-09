@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { removeOwnerProjectApi } from "../../services/projectService";
+import { removeOwnerProjectApi } from "@/services/projectService";
 import toast from "react-hot-toast";
 
 export default function useRemoveProject() {

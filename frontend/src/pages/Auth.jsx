@@ -1,4 +1,4 @@
-import Layer from "../features/authentication/Layer.jsx";
+import Layer from "@/features/authentication/Layer.jsx";
 
 function Auth() {
   return (

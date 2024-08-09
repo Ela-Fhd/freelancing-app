@@ -1,12 +1,12 @@
-import Table from "../../ui/table";
-import truncateText from "../../utils/truncateText";
-import toLocaleDateString from "../../utils/toLocaleDateString";
-import { toPersianNumberWithComma } from "../../utils/toPersianDigits";
+import Table from "@/ui/table";
+import truncateText from "@/utils/truncateText";
+import toLocaleDateString from "@/utils/toLocaleDateString";
+import { toPersianNumberWithComma } from "@/utils/toPersianDigits";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { GrEdit } from "react-icons/gr";
-import Modal from "../../ui/modal";
+import Modal from "@/ui/modal";
 import { useState } from "react";
-import ConfirmDelete from "../../ui/confirmDelete";
+import ConfirmDelete from "@/ui/confirmDelete";
 import useRemoveProject from "./useRemoveProject";
 
 export default function ProjectsRow({ project, index }) {

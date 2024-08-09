@@ -1,24 +1,36 @@
-import React from "react";
-
-function Input({ name = "", type, placeholder, onChange, value, label, id }) {
+function Input({
+  name = "",
+  type = "text",
+  placeholder,
+  label,
+  id,
+  register,
+  validationSchema,
+  errors,
+  required,
+}) {
   return (
     <>
       <label
         htmlFor={id}
-        className="block mb-2 text-secondary-200 md:text-secondary-500"
+        className="block mb-2 mt-3 text-secondary-200 md:text-secondary-500"
       >
         {label}
+        {required && <span className="text-error mr-2">*</span>}
       </label>
       <input
-        name={name}
+        {...register(name, validationSchema)}
         id={id}
         type={type}
-        value={value}
         placeholder={placeholder}
-        onChange={onChange}
         autoComplete="off"
         className="input_field w-full"
       />
+      {errors && errors[name] && (
+        <span className="text-error block text-sm">
+          {errors[name]?.message}
+        </span>
+      )}
     </>
   );
 }

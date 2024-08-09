@@ -1,9 +1,9 @@
 import useOwnerProjects from "./useOwnerProjects";
-import Loading from "../../ui/loading";
-import Empty from "../../ui/empty";
-import Table from "../../ui/table";
+import Loading from "@/ui/loading";
+import Empty from "@/ui/empty";
+import Table from "@/ui/table";
 import ProjectsRow from "./ProjectsRow";
-import Modal from "../../ui/modal";
+import Modal from "@/ui/modal";
 import { useState } from "react";
 import CreateProjectForm from "./CreateProjectForm";
 
