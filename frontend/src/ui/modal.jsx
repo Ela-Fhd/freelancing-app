@@ -9,7 +9,7 @@ function Modal({ open, close, title, children }) {
       <div className="backdrop-blur-sm fixed top-0 left-0 w-full h-screen z-50 bg-secondary-800 bg-opacity-30">
         <div
           ref={ref}
-          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 bg-white rounded-md shadow-sm  transition-all duration-300 ease-in-out w-[calc(100vw-2rem)] md:max-w-lg max-h-[calc(100vh-2rem)] overflow-y-auto"
+          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md shadow-sm  transition-all duration-300 ease-in-out w-[calc(100vw-2rem)] md:max-w-lg  overflow-y-auto max-h-[calc(100vh-2rem)]"
         >
           <div className="border-b border-b-secondary-200">
             <div className="p-3 flex justify-between items-center">

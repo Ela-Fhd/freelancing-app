@@ -1,6 +1,10 @@
 import { useForm } from "react-hook-form";
 import Input from "@/ui/input";
 import Button from "@/ui/button";
+import SelectInput from "@/ui/selectInput";
+import { useState } from "react";
+import Tag from "@/ui/tag";
+import MultiDatePicker from "../../ui/datePicker";
 
 function CreateProjectForm() {
   const {
@@ -8,6 +12,9 @@ function CreateProjectForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const [tag, setTag] = useState([]);
+  const [date, setDate] = useState(new Date());
 
   const onSubmitForm = (data) => {
     console.log(data);
@@ -47,6 +54,24 @@ function CreateProjectForm() {
           },
         }}
         errors={errors}
+      />
+
+      <SelectInput
+        label="دسته بندی"
+        required
+        name="category"
+        options={[]}
+        register={register}
+      />
+
+      <Tag label="تگ ها" tag={tag} setTag={setTag} name="tags" required />
+
+      <MultiDatePicker
+        label="ددلاین"
+        name="deadline"
+        date={date}
+        setDate={setDate}
+        required
       />
 
       <Button type="submit">ایجاد پروژه</Button>
