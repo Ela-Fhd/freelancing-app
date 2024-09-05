@@ -31,7 +31,7 @@ function ProjectsTable() {
           title="ایجاد پروژه جدید"
           close={() => setOpenModal(false)}
         >
-          <CreateProjectForm />
+          <CreateProjectForm onClose={() => setOpenModal(false)} />
         </Modal>
       </div>
       <Table>

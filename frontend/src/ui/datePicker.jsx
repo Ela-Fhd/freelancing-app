@@ -21,6 +21,7 @@ function MultiDatePicker({ name, label, date, setDate, required }) {
         format="YYYY/MM/DD"
         calendar={persian}
         locale={persian_fa}
+        id={name}
       />
     </div>
   );

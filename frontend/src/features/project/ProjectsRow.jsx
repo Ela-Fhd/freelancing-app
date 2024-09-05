@@ -12,7 +12,7 @@ import useRemoveProject from "./useRemoveProject";
 export default function ProjectsRow({ project, index }) {
   const [openEditModal, setOpenEditModal] = useState(false);
   const [openDeletModal, setOpenDeleteModal] = useState(false);
-  const { removeOwnerProject, isDeleting } = useRemoveProject();
+  const { removeOwnerProject } = useRemoveProject();
 
   return (
     <>
@@ -55,7 +55,7 @@ export default function ProjectsRow({ project, index }) {
                   onClose={() => setOpenDeleteModal(false)}
                   onConfirm={() => {
                     removeOwnerProject(project._id, {
-                      onSuccess: (data) => setOpenDeleteModal(false),
+                      onSuccess: () => setOpenDeleteModal(false),
                     });
                   }}
                 />

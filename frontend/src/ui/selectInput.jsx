@@ -10,7 +10,7 @@ function SelectInput({ label, options, name, required, register }) {
       <select id={name} className="input_field w-full" {...register(name)}>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
-            {option.name}
+            {option.label}
           </option>
         ))}
       </select>
