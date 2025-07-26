@@ -8,6 +8,7 @@ export function getOtp(data) {
       return data.data;
     });
 }
+
 export function checkOtp(data) {
   return http.post("/user/check-otp", data).then(({ data }) => data.data);
 }

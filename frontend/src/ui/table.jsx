@@ -1,5 +1,3 @@
-import React from "react";
-
 function Table({ children }) {
   return (
     <div className="bg-secondary-0 overflow-x-auto">

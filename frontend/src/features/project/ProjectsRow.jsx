@@ -12,13 +12,13 @@ import useRemoveProject from "./useRemoveProject";
 export default function ProjectsRow({ project, index }) {
   const [openEditModal, setOpenEditModal] = useState(false);
   const [openDeletModal, setOpenDeleteModal] = useState(false);
-  const { removeOwnerProject } = useRemoveProject();
+  const { removeOwnerProject, isDeleting } = useRemoveProject();
 
   return (
     <>
       <Table.Row key={project._id}>
         <td>{index + 1}</td>
-        <td>{truncateText(project?.title, 10)}</td>
+        <td>{truncateText(project?.title, 20)}</td>
         <td>{project?.category?.title || "انتخاب نشده!"}</td>
         <td>{toPersianNumberWithComma(project.budget)}</td>
         <td>{toLocaleDateString(project.deadline)}</td>
@@ -58,6 +58,7 @@ export default function ProjectsRow({ project, index }) {
                       onSuccess: () => setOpenDeleteModal(false),
                     });
                   }}
+                  disabled={isDeleting}
                 />
               </Modal>
             </>

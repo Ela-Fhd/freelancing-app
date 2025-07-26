@@ -8,7 +8,7 @@ function Header() {
 
   // console.log(user?.role);
 
-  return <div className="bg-secondary-0 py-4 px-8 ">header</div>;
+  return <div className="bg-secondary-0 py-4 px-8 ">{user?.name}</div>;
 }
 
 export default Header;

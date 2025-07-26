@@ -15,7 +15,6 @@ function ProjectsTable() {
   //  if projects array is empty and projects.length === 0 => show empty message to user / else show projects table
 
   if (isLoading) return <Loading />;
-  if (!projects.length) return <Empty resourceName="پروژه" />;
 
   return (
     <>
@@ -34,26 +33,31 @@ function ProjectsTable() {
           <CreateProjectForm onClose={() => setOpenModal(false)} />
         </Modal>
       </div>
-      <Table>
-        <Table.Header>
-          <Table.Row>
-            <th>#</th>
-            <th>عنوان پروژه</th>
-            <th>دسته بندی</th>
-            <th>پروژه</th>
-            <th>ددلاین</th>
-            <th>تگ ها</th>
-            <th>فریلنسر</th>
-            <th>وضیعت</th>
-            <th>عملیات</th>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {projects.map((project, index) => (
-            <ProjectsRow project={project} index={index} key={project._id} />
-          ))}
-        </Table.Body>
-      </Table>
+
+      {!projects.length ? (
+        <Empty resourceName="پروژه" />
+      ) : (
+        <Table>
+          <Table.Header>
+            <Table.Row>
+              <th>#</th>
+              <th>عنوان پروژه</th>
+              <th>دسته بندی</th>
+              <th>پروژه</th>
+              <th>ددلاین</th>
+              <th>تگ ها</th>
+              <th>فریلنسر</th>
+              <th>وضیعت</th>
+              <th>عملیات</th>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {projects.map((project, index) => (
+              <ProjectsRow project={project} index={index} key={project._id} />
+            ))}
+          </Table.Body>
+        </Table>
+      )}
     </>
   );
 }
