@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { toPersianNumberWithComma } from "@/utils/toPersianDigits";
+
 function Input({
   name = "",
   type = "text",
@@ -8,7 +11,13 @@ function Input({
   validationSchema,
   errors,
   required,
+  filterPrice = false,
 }) {
+  const [filterdNumber, setFilteredNumber] = useState(0);
+
+  const handleChange = (e) =>
+    setFilteredNumber(toPersianNumberWithComma(e.target.value));
+
   return (
     <>
       <label
@@ -25,7 +34,16 @@ function Input({
         placeholder={placeholder}
         autoComplete="off"
         className="input_field w-full"
+        onChange={(e) => {
+          register(name).onChange(e);
+          handleChange(e);
+        }}
       />
+
+      {filterPrice && (
+        <span className="text-green-500 mr-3 mt-5">{filterdNumber} ریال</span>
+      )}
+
       {errors && errors[name] && (
         <span className="text-error block text-sm">
           {errors[name]?.message}
