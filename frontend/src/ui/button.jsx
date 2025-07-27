@@ -1,13 +1,13 @@
-import React from "react";
+import Loading from "./loading";
 
-function Button({ color = "btn--green", type, onClick, children }) {
+function Button({ color = "btn--green", type, onClick, loading, children }) {
   return (
     <button
       type={type}
       className={`btn ${color} w-full my-3`}
       onClick={onClick}
     >
-      {children}
+      {loading ? <Loading /> : children}
     </button>
   );
 }
