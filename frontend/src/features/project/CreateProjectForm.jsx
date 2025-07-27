@@ -34,7 +34,7 @@ function CreateProjectForm({ onClose, projectInfo = {} }) {
   });
 
   const [tag, setTag] = useState(tags || []);
-  const [date, setDate] = useState(new Date(deadline || ""));
+  const [date, setDate] = useState(deadline ? new Date(deadline) : new Date());
   const { categories } = useCategories();
   const { createProject, isCreating } = useCreateProject();
   const { editProject, isEditing } = useEditProject();
