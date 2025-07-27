@@ -7,22 +7,37 @@ import Tag from "@/ui/tag";
 import MultiDatePicker from "@/ui/datePicker";
 import useCategories from "@/hooks/useCategories";
 import useCreateProject from "./useCreateProject";
-import Loading from "@/ui/loading";
+import useEditProject from "./useEditProject";
 
-function CreateProjectForm({ onClose }) {
+function CreateProjectForm({ onClose, projectInfo = {} }) {
+  const { _id: projectUuid } = projectInfo;
+  const isEditSession = !!projectUuid;
+  const { title, description, category, budget, tags, deadline } = projectInfo;
+
+  let editValues = {};
+  if (isEditSession) {
+    editValues = {
+      title,
+      description,
+      category: category?._id,
+      budget,
+    };
+  }
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm({
+    defaultValues: editValues,
+  });
 
-  const [tag, setTag] = useState([]);
-  const [date, setDate] = useState(new Date());
-
+  const [tag, setTag] = useState(tags || []);
+  const [date, setDate] = useState(new Date(deadline || ""));
   const { categories } = useCategories();
-
   const { createProject, isCreating } = useCreateProject();
+  const { editProject, isEditing } = useEditProject();
 
   const onSubmitForm = (data) => {
     const newProject = {
@@ -30,16 +45,29 @@ function CreateProjectForm({ onClose }) {
       deadline: new Date(date).toISOString(),
       tags: tag,
     };
-    createProject(newProject, {
-      onSuccess: () => {
-        onClose();
-        reset();
-      },
-    });
+
+    if (isEditSession) {
+      editProject(
+        { uuid: projectUuid, newProject },
+        {
+          onSuccess: () => {
+            onClose();
+            reset();
+          },
+        }
+      );
+    } else {
+      createProject(newProject, {
+        onSuccess: () => {
+          onClose();
+          reset();
+        },
+      });
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmitForm)}>
+    <form onSubmit={handleSubmit(onSubmitForm)} className="text-right">
       <Input
         name="title"
         type="text"
@@ -82,7 +110,7 @@ function CreateProjectForm({ onClose }) {
         register={register}
         name="budget"
         required
-        type="text"
+        type="number"
         placeholder="بودجه پروژه"
         validationSchema={{
           required: "تعیین بودجه ضروری است",
@@ -91,6 +119,7 @@ function CreateProjectForm({ onClose }) {
             message: "طول عدد وارد شده نامعتبر است",
           },
         }}
+        filterPrice
       />
 
       <SelectInput
@@ -111,7 +140,9 @@ function CreateProjectForm({ onClose }) {
         required
       />
 
-      <Button type="submit">{isCreating ? <Loading /> : "ایجاد پروژه"}</Button>
+      <Button type="submit" loading={isCreating || isEditing}>
+        {isEditSession ? "ویرایش" : "ایجاد پروژه"}
+      </Button>
     </form>
   );
 }

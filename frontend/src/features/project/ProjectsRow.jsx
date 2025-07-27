@@ -8,6 +8,7 @@ import Modal from "@/ui/modal";
 import { useState } from "react";
 import ConfirmDelete from "@/ui/confirmDelete";
 import useRemoveProject from "./useRemoveProject";
+import CreateProjectForm from "./CreateProjectForm";
 
 export default function ProjectsRow({ project, index }) {
   const [openEditModal, setOpenEditModal] = useState(false);
@@ -40,7 +41,7 @@ export default function ProjectsRow({ project, index }) {
           )}
         </td>
         <td>
-          <div className="flex items-center gap-x-5">
+          <div className="flex items-start gap-x-5">
             <>
               <button onClick={() => setOpenDeleteModal(true)}>
                 <FaRegTrashCan className="w-5 h-5 text-error" />
@@ -71,7 +72,10 @@ export default function ProjectsRow({ project, index }) {
                 open={openEditModal}
                 close={() => setOpenEditModal(false)}
               >
-                test modal
+                <CreateProjectForm
+                  projectInfo={project}
+                  onClose={() => setOpenEditModal(false)}
+                />
               </Modal>
             </>
           </div>

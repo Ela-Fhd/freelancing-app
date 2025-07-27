@@ -11,3 +11,9 @@ export function removeOwnerProjectApi(id) {
 export function createNewProjectApi(data) {
   return https.post("/project/add", data).then(({ data }) => data.data);
 }
+
+export function editNewProjectApi({ uuid, newProject }) {
+  return https
+    .patch(`/project/update/${uuid}`, newProject)
+    .then(({ data }) => data.data);
+}
