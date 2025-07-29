@@ -17,3 +17,7 @@ export function editNewProjectApi({ uuid, newProject }) {
     .patch(`/project/update/${uuid}`, newProject)
     .then(({ data }) => data.data);
 }
+
+export function toggleProjectStatusApi({ uuid, data }) {
+  return https.patch(`/project/${uuid}`, data).then(({ data }) => data.data);
+}
