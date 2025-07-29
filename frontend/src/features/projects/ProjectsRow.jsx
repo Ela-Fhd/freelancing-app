@@ -10,6 +10,8 @@ import ConfirmDelete from "@/ui/confirmDelete";
 import useRemoveProject from "./useRemoveProject";
 import CreateProjectForm from "./CreateProjectForm";
 import ToggleProjectStatus from "./ToggleProjectStatus";
+import { HiEye } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 export default function ProjectsRow({ project, index }) {
   const [openEditModal, setOpenEditModal] = useState(false);
@@ -76,6 +78,11 @@ export default function ProjectsRow({ project, index }) {
               </Modal>
             </>
           </div>
+        </td>
+        <td>
+          <Link to={project?._id} className="flex justify-center">
+            <HiEye className="text-primary-800 w-5 h-5 " />
+          </Link>
         </td>
       </Table.Row>
     </>
