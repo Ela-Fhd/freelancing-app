@@ -4,21 +4,24 @@ import Loading from "@/ui/loading";
 
 export default function ToggleProjectStatus({ project }) {
   const { isUpdating, toggleProjectStatus } = useToggleProjectStatus();
+  const { status } = project;
+  const enabled = status === "OPEN" ? true : false;
+  const label = status === "OPEN" ? "باز" : "بسته";
 
   const handleChangeStatus = () => {
-    const status = project.status === "OPEN" ? "CLOSED" : "OPEN";
-    toggleProjectStatus({ uuid: project?._id, data: { status } });
+    const new_status = status === "OPEN" ? "CLOSED" : "OPEN";
+    toggleProjectStatus({ uuid: project?._id, data: { status: new_status } });
   };
 
   return (
-    <div>
+    <div className="w-[5rem] flex justify-center">
       {isUpdating ? (
         <Loading width={50} height={30} />
       ) : (
         <Toggle
-          label={project.status === "OPEN" ? "باز" : "بسته"}
+          label={label}
           handleChange={handleChangeStatus}
-          enabled={project.status === "OPEN" ? true : false}
+          enabled={enabled}
         />
       )}
     </div>

@@ -79,7 +79,7 @@ function CreateProjectForm({ onClose, projectInfo = {} }) {
         validationSchema={{
           required: "عنوان ضروری است",
           minLength: {
-            value: "10",
+            value: "5",
             message: "طول عنوان نمی تواند کمتر از 10 کاراکتر باشد",
           },
         }}

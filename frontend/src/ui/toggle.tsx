@@ -8,7 +8,7 @@ export default function Toggle({ enabled, handleChange, label }) {
         checked={enabled}
         onChange={handleChange}
         className={`${
-          enabled ? "bg-primary-900" : "bg-secondary-200"
+          enabled ? "bg-green-500" : "bg-secondary-200"
         } group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition`}
       >
         <span
