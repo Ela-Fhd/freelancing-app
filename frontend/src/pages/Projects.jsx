@@ -1,12 +1,7 @@
-import React from "react";
-import ProjectsTable from "@/features/project/ProjectsTable";
+import ProjectsTable from "@/features/projects/ProjectsTable";
 
 function Projects() {
-  return (
-    <>
-      <ProjectsTable />
-    </>
-  );
+  return <ProjectsTable />;
 }
 
 export default Projects;

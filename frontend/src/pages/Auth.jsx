@@ -1,11 +1,7 @@
 import Layer from "@/features/authentication/Layer.jsx";
 
 function Auth() {
-  return (
-    <>
-      <Layer />
-    </>
-  );
+  return <Layer />;
 }
 
 export default Auth;
