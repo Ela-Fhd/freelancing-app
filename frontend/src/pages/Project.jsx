@@ -10,7 +10,7 @@ function Project() {
   return (
     <div>
       <ProjectHeader project={project} />
-      <ProposalTable proposal={project.proposal} />
+      <ProposalTable proposals={project.proposals} />
     </div>
   );
 }
