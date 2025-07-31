@@ -11,9 +11,6 @@ function ProjectsTable() {
   const { isLoading, projects } = useOwnerProjects();
   const [openModal, setOpenModal] = useState(false);
 
-  // if is loading ==> show isLoading component
-  //  if projects array is empty and projects.length === 0 => show empty message to user / else show projects table
-
   if (isLoading) return <Loading />;
 
   return (
