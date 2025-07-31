@@ -1,5 +1,5 @@
-import https from "./httpService";
+import http from "./httpService";
 
 export function changeProposalStatusApi({ id, data }) {
-  return https.patch(`/proposal/${id}`, data).then(({ data }) => data.data);
+  return http.patch(`/proposal/${id}`, data).then(({ data }) => data.data);
 }

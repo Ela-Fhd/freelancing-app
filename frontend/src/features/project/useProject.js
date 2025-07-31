@@ -5,7 +5,7 @@ import { getProjectApi } from "@/services/projectService";
 export default function useProject() {
   const { id } = useParams();
 
-  const { data, isLoading } = useQuery({
+  const { data, isPending: isLoading } = useQuery({
     queryKey: ["project", id],
     queryFn: () => getProjectApi(id),
     retry: false,
