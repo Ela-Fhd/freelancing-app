@@ -10,7 +10,7 @@ const UserAvatar = () => {
         alt="avatar"
         className="w-7 h-7 rounded-full object-covar object-center"
       />
-      <span>{user?.name}</span>
+      <span className="text-secondary-900">{user?.name}</span>
     </Link>
   );
 };

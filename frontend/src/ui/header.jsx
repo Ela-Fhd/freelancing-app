@@ -4,7 +4,7 @@ import HeaderMenu from "./headerMenu";
 import UserAvatar from "@/features/authentication/UserAvatar";
 
 function Header() {
-  const { isLoading, user } = useUser();
+  const { isLoading } = useUser();
 
   return (
     <div className="bg-secondary-0 border-b border-secondary-200 py-4 px-8 ">
