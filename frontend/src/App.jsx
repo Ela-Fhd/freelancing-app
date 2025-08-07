@@ -14,7 +14,7 @@ import OwnerDashboard from "@/pages/OwnerDashboard";
 import Projects from "@/pages/Projects";
 import Project from "@/pages/Project";
 import { DarkModeProvider } from "./context/darkMode";
-import OwnerLayout from "./features/ownerLayout/ownerLayout";
+import OwnerLayout from "@/features/owner/ownerLayout";
 
 function App() {
   const queryClient = new QueryClient();
