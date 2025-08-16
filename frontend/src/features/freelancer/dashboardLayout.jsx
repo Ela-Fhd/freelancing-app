@@ -1,5 +1,5 @@
 import Stats from "./stats";
-import DashboardHeader from "./dashboardHeader";
+import DashboardHeader from "@/ui/dashboardHeader";
 import Loading from "@/ui/loading";
 import useProposals from "@/features/proposals/useProposals";
 

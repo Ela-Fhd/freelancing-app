@@ -13,14 +13,14 @@ export default function FreelancerLayout() {
           <span>خانه</span>
         </CustomNavlink>
 
-        <CustomNavlink to="projects">
-          <HiCollection className="text-xl" />
-          <span>پروژه ها</span>
-        </CustomNavlink>
-
         <CustomNavlink to="proposals">
           <HiCollection className="text-xl" />
           <span>درخواست ها</span>
+        </CustomNavlink>
+
+        <CustomNavlink to="projects">
+          <HiCollection className="text-xl" />
+          <span>پروژه ها</span>
         </CustomNavlink>
       </Sidebar>
     </AppLayout>
