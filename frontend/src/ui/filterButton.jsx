@@ -15,9 +15,8 @@ export default function FilterButton({ options, filterFields }) {
       {options.map(({ value, label }, index) => {
         const isActive = value === category;
         return (
-          <div className="flex gap-x-2">
+          <div className="flex gap-x-2" key={`${value}_${index}`}>
             <button
-              key={`${value}_${index}`}
               onClick={() => handleClick(value)}
               disabled={isActive}
               className={`py-2 px-4 rounded-lg font-bold transition-all duration-300 text-sm ${
