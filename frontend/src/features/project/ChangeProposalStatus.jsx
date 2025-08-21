@@ -2,6 +2,7 @@ import SelectInput from "@/ui/selectInput";
 import { useForm } from "react-hook-form";
 import Button from "@/ui/button";
 import useChangeProposalStatus from "./useChangeProposalStatus";
+import { useParams } from "react-router-dom";
 
 const options = [
   { label: "رد شده", value: 0 },
@@ -10,13 +11,14 @@ const options = [
 ];
 
 const ChangeProposalStatus = ({ proposal, onClose }) => {
+  const { id: projectId } = useParams();
   const { _id: proposalId, status } = proposal;
   const { register, handleSubmit } = useForm();
   const { isUpdating, changeProposalStatus } = useChangeProposalStatus();
 
   const handleChangeProposalStatus = (data) => {
     changeProposalStatus(
-      { id: proposalId, data },
+      { proposalId, projectId, ...data },
       {
         onSuccess: () => onClose(),
       }
