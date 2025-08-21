@@ -26,6 +26,6 @@ export function getProjectApi(id) {
   return https.get(`/project/${id}`).then(({ data }) => data.data);
 }
 
-export function getProjectsApi() {
-  return https.get("project/list").then(({ data }) => data.data);
+export function getProjectsApi(params) {
+  return https.get("project/list", { params }).then(({ data }) => data.data);
 }
