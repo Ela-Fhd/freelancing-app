@@ -19,7 +19,7 @@ function Input({
     setFilteredNumber(toPersianNumberWithComma(e.target.value));
 
   return (
-    <>
+    <div className="block">
       <label
         htmlFor={id}
         className="block mb-2 mt-3 text-secondary-200 md:text-secondary-500"
@@ -41,7 +41,9 @@ function Input({
       />
 
       {filterPrice && (
-        <span className="text-green-500 mr-3 mt-5">{filterdNumber} ریال</span>
+        <span className="text-green-500 mr-3 mt-2 block">
+          {filterdNumber} ریال
+        </span>
       )}
 
       {errors && errors[name] && (
@@ -49,7 +51,7 @@ function Input({
           {errors[name]?.message}
         </span>
       )}
-    </>
+    </div>
   );
 }
 
