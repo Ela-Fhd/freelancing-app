@@ -6,6 +6,8 @@ import { useLocation } from "react-router-dom";
 export default function useProjects() {
   const { search } = useLocation();
   const queryObject = queryString.parse(search);
+  // OR
+  // const queryObject = Object.fromEntries(new URLSearchParams(search));
 
   const { data, isLoading } = useQuery({
     queryKey: ["projects", queryObject],
