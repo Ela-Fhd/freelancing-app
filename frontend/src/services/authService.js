@@ -23,6 +23,10 @@ export function getUser() {
   return http.get("/user/profile").then(({ data }) => data.data);
 }
 
+export function getUsersApi() {
+  return http.get("/admin/user/list").then(({ data }) => data.data);
+}
+
 export function logoutApi() {
   return http.post("/user/logout").then(({ data }) => data.data);
 }

@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { DarkModeProvider } from "./context/darkMode";
 import { Toaster } from "react-hot-toast";
 import Auth from "@/pages/Auth.jsx";
-import Dashboard from "@/pages/Dashboard.jsx";
 import CompleteProfile from "@/pages/CompleteProfile.jsx";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/NotFound";
@@ -14,6 +13,8 @@ import Projects from "@/pages/Projects";
 import Project from "@/pages/Project";
 import FreelancerLayout from "@/features/freelancer/freelancerLayout";
 import FreelancerDashboard from "@/pages/FreelancerDashboard";
+import AdminLayout from "@/features/admin/adminLayout";
+import AdminDashboard from "@/pages/AdminDashboard";
 import Proposals from "@/pages/proposals";
 import SubmittedProjects from "@/pages/SubmittedProjects";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -30,6 +31,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />
+
+            {/* owner routes */}
             <Route
               path="/owner"
               element={
@@ -48,6 +51,7 @@ function App() {
               <Route path="projects/:id" element={<Project />} />
             </Route>
 
+            {/* freelancer routes */}
             <Route
               path="/freelancer"
               element={
@@ -65,9 +69,27 @@ function App() {
               <Route path="proposals" element={<Proposals />} />
               <Route path="projects" element={<SubmittedProjects />} />
             </Route>
+
+            {/* admin routes */}
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route
+                index
+                element={<Navigate to="dashboard" />}
+                replace="true"
+              />
+
+              <Route path="dashboard" element={<AdminDashboard />} />
+            </Route>
+
             <Route path="/auth" element={<Auth />} />
             <Route path="/complete-profile" element={<CompleteProfile />} />
-            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </div>
       </QueryClientProvider>

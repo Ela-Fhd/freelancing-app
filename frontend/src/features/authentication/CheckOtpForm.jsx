@@ -40,6 +40,7 @@ function CheckOtpForm({
       }
       if (user.role === "OWNER") return navigate("/owner/dashboard");
       if (user.role === "FREELANCER") return navigate("/freelancer/dashboard");
+      if (user.role === "ADMIN") return navigate("/admin/dashboard");
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }

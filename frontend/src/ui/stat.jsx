@@ -8,7 +8,7 @@ export default function Stat({ title, value, icon, color }) {
   return (
     <div className="col-span-1 grid grid-row-2 grid-cols-[6.4rem_1fr] gap-x-5 bg-secondary-0 p-5 rounded-lg">
       <div
-        className={`row-span-2 rounded-full flex items-center justify-center aspect-square ${colors[color]} cursor-pointer`}
+        className={`row-span-2 rounded-full px-5 flex items-center justify-center aspect-square ${colors[color]} cursor-pointer`}
       >
         {icon}
       </div>
