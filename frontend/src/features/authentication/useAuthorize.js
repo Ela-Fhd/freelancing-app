@@ -2,10 +2,14 @@ import useUser from "./useUser";
 import { useLocation } from "react-router";
 
 export default function useAuhorize() {
+  let isVerified = false;
+  let isAuthenticate = false;
+  let isAuthorized = false;
   const { pathname } = useLocation();
   const { user, isLoading } = useUser();
-  let isAuthenticate = false;
+
   if (user) isAuthenticate = true;
+  if (user && user.status === 2) isVerified = true;
 
   const AuthorisedRoles = {
     admin: "ADMIN",
@@ -13,7 +17,6 @@ export default function useAuhorize() {
     owner: "OWNER",
   };
 
-  let isAuthorized = false;
   const desiredRole = pathname.split("/").at(1);
 
   if (Object.keys(AuthorisedRoles).includes(desiredRole)) {
@@ -21,5 +24,5 @@ export default function useAuhorize() {
       isAuthorized = true;
   }
 
-  return { isLoading, user, isAuthenticate, isAuthorized };
+  return { isLoading, user, isAuthenticate, isAuthorized, isVerified };
 }

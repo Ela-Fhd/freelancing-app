@@ -2,15 +2,18 @@ import useAuhorize from "@/features/authentication/useAuthorize";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import Loading from "@/ui/Loading";
+import toast from "react-hot-toast";
 
 export default function ProtectedRoute({ children }) {
-  const { isLoading, isAuthenticate, isAuthorized } = useAuhorize();
+  const { isLoading, isAuthenticate, isAuthorized, isVerified } = useAuhorize();
   const navigate = useNavigate();
-
-  console.log(isAuthorized);
 
   useEffect(() => {
     if (!isAuthenticate && !isLoading) navigate("/auth");
+    if (!isVerified && !isLoading) {
+      toast.error("پروفایل شما در انتظار بررسی است");
+      navigate("/not-access");
+    }
     if (!isAuthorized && !isLoading) navigate("/not-access");
   }, [isLoading, isAuthenticate, isAuthorized]);
 
