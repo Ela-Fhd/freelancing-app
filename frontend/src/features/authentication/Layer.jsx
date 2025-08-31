@@ -5,6 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import { getOtp } from "@/services/authService";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import DarkModeToggle from "../../ui/darkModeToggle";
 
 function Layer() {
   const [step, setStep] = useState(1);
@@ -64,10 +65,13 @@ function Layer() {
 
   return (
     <>
-      <div className="w-full bg-white md:w-2/3 md:bg-primary-900 md:float-left px-5 md:py-10 min-h-screen relative md:rounded-r-xl flex items-start justify-around ">
+      <div className="fixed mt-2 mr-[100%] z-10 translate-x-[100%]">
+        <DarkModeToggle />
+      </div>
+      <div className="w-full bg-secondary-0 md:w-2/3 md:bg-primary-900 md:float-left px-5 md:py-10 min-h-screen relative md:rounded-r-xl flex items-start justify-around ">
         {renderStep()}
         <div>
-          <div className="flex items-start  relative top-0 text-primary-900 md:text-white mx-auto ">
+          <div className="flex items-start relative top-0 text-primary-900 md:text-white mx-auto gap-x-12 mt-2 md:mt-0">
             <div>
               <div className="badge">
                 <span className="badge--text">1</span>

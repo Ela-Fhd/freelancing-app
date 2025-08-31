@@ -19,6 +19,7 @@ import Proposals from "@/pages/proposals";
 import SubmittedProjects from "@/pages/SubmittedProjects";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import ProtectedRoute from "@/ui/protectedRoute";
+import Users from "@/pages/Users";
 
 function App() {
   const queryClient = new QueryClient();
@@ -26,10 +27,14 @@ function App() {
     <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        <div className="container p-5 md:p-0 max-w-screen-xl">
+        <div className="">
           <Toaster />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              // element={<Home />}
+              element={<Navigate to="/auth" />}
+            />
             <Route path="*" element={<NotFound />} />
 
             {/* owner routes */}
@@ -84,8 +89,8 @@ function App() {
                 element={<Navigate to="dashboard" />}
                 replace="true"
               />
-
               <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="users" element={<Users />} />
             </Route>
 
             <Route path="/auth" element={<Auth />} />

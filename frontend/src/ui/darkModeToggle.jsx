@@ -8,9 +8,9 @@ const DarkModeToggle = () => {
   return (
     <button onClick={toggleDarkMode}>
       {isDarkMode ? (
-        <LuSunMedium className="w-7 h-7 cursor-pointer text-secondary-900" />
+        <LuSunMedium className="w-7 h-7 cursor-pointer text-yellow-500" />
       ) : (
-        <LuMoonStar className="w-7 h-7 cursor-pointer" />
+        <LuMoonStar className="w-7 h-7 cursor-pointer text-yellow-500" />
       )}
     </button>
   );

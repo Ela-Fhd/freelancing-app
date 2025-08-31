@@ -9,7 +9,7 @@ const Logout = () => {
       {isLoading ? (
         <Loading color="#000" />
       ) : (
-        <FiLogOut className="w-5 h-5 hover:text-error cursor-pointer text-secondary-900" />
+        <FiLogOut className="w-5 h-5 cursor-pointer text-error" />
       )}
     </button>
   );

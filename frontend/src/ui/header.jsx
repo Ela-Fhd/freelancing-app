@@ -9,7 +9,7 @@ function Header() {
   return (
     <div className="bg-secondary-0 border-b border-secondary-200 py-4 px-8 ">
       <div
-        className={`container flex items-center justify-between xl:max-w-screen-lg ${
+        className={`container flex items-center justify-between ${
           isLoading ? "blur-sm" : ""
         }`}
       >
