@@ -91,6 +91,8 @@ function App() {
               />
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="users" element={<Users />} />
+              <Route path="proposals" element={<Proposals />} />
+              <Route path="projects" element={<SubmittedProjects />} />
             </Route>
 
             <Route path="/auth" element={<Auth />} />
