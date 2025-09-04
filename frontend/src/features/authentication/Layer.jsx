@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SendOtpForm from "./SendOtpForm";
 import CheckOtpForm from "./CheckOtpForm";
 import { useMutation } from "@tanstack/react-query";
@@ -6,14 +6,12 @@ import { getOtp } from "@/services/authService";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import DarkModeToggle from "@/ui/darkModeToggle";
-import useUser from "./useUser";
 import { useNavigate } from "react-router-dom";
 
 function Layer() {
   const [step, setStep] = useState(1);
   const [otp, setOtp] = useState("");
   const { register, handleSubmit, getValues } = useForm();
-  const { user } = useUser();
   const navigate = useNavigate();
 
   const {
@@ -65,10 +63,6 @@ function Layer() {
         return null;
     }
   };
-
-  useEffect(() => {
-    if (user) navigate(-1);
-  }, [user, navigate]);
 
   return (
     <>
