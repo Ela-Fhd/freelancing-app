@@ -88,7 +88,7 @@ function CompleteProfileForm() {
               required: "انتخاب نقش ضروری است",
             },
             options: [
-              { value: "FREELANVER", label: "فریلنسر" },
+              { value: "FREELANCER", label: "فریلنسر" },
               { value: "OWNER", label: "کارفرما" },
             ],
           }}
