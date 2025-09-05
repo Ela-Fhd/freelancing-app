@@ -24,9 +24,10 @@ This is a modern freelancing platform where **freelancers submit proposals** for
 
 ## 🚀 Live Demo
 Check out the live demo here: [Demo Link](https://freelancing-app-frontend-pi.vercel.app)
-👩‍💻َ ADMIN : 09011111111
-👩‍💻 FREELANCER : 09022222222
-👩‍💻 OWNER : 09033333333
+
+- 👩‍💻ADMIN : 09011111111
+- 👩‍💻 FREELANCER : 09022222222
+- 👩‍💻 OWNER : 09033333333
 
 ## 📸 Screenshot
 ![Project Screenshot](https://github.com/Ela-Fhd/freelancing-app/blob/main/demo/2.png)
