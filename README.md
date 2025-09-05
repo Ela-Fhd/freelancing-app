@@ -28,8 +28,18 @@ Check out the live demo here: [Demo Link](https://your-demo-link.com)
 1. Clone the repository:  
    ```bash
    git clone https://github.com/your-username/your-repo.git
-2.Navigate to the project folder:
-  ```bash
-  cd your-repo
+2. Navigate to the project folder:
+   ```bash
+   cd your-repo
 
-3.Install dependencies for frontend:
+3. Install dependencies for frontend:
+   ```bash
+   npm install
+
+4. Run the frontend:
+   ```bash
+   npm start
+
+5.Setup backend server (Node.js) and configure API endpoints.
+
+
