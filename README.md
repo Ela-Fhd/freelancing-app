@@ -1,6 +1,8 @@
 # Freelancing Platform
 
 ![Project Screenshot](https://via.placeholder.com/800x400?text=Project+Screenshot)
+![demo](https://github.com/Ela-Fhd/RickAndMorthy/blob/main/public/demo/demo.png)
+
 
 This is a modern freelancing platform where **freelancers submit proposals** for diverse projects and **project owners accept them**. The platform is designed to provide a smooth and efficient workflow for both freelancers and clients.
 
