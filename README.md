@@ -1,7 +1,6 @@
 # Freelancing Platform
 
-![Project Screenshot](https://via.placeholder.com/800x400?text=Project+Screenshot)
-![demo](https://github.com/Ela-Fhd/RickAndMorthy/blob/main/public/demo/demo.png)
+![Project Screenshot](https://github.com/Ela-Fhd/freelancing-app/blob/main/demo/1.png)
 
 
 This is a modern freelancing platform where **freelancers submit proposals** for diverse projects and **project owners accept them**. The platform is designed to provide a smooth and efficient workflow for both freelancers and clients.
@@ -27,7 +26,9 @@ This is a modern freelancing platform where **freelancers submit proposals** for
 Check out the live demo here: [Demo Link](https://freelancing-app-frontend-pi.vercel.app)
 
 ## 📸 Screenshot
-![Project Screenshot](https://via.placeholder.com/800x400?text=Project+Screenshot)
+![Project Screenshot](https://github.com/Ela-Fhd/freelancing-app/blob/main/demo/2.png)
+![Project Screenshot](https://github.com/Ela-Fhd/freelancing-app/blob/main/demo/3.png)
+![Project Screenshot](https://github.com/Ela-Fhd/freelancing-app/blob/main/demo/4.png)
 
 ## 💻 Installation & Setup
 1. Clone the repository:  
