@@ -4,6 +4,9 @@
 
 This is a modern freelancing platform where **freelancers submit proposals** for diverse projects and **project owners accept them**. The platform is designed to provide a smooth and efficient workflow for both freelancers and clients.
 
+- 🙋‍♀️Developed by Elahe Fahmideh
+- &#128231;Contact with me : <a href="https://www.linkedin.com/in/elahe-fahmideh/">LINKEDIN</a>
+
 ## 🌟 Features
 - Submit and manage proposals
 - Accept or reject proposals as a project owner
@@ -19,7 +22,7 @@ This is a modern freelancing platform where **freelancers submit proposals** for
 - **Others:** HTML, CSS, JavaScript
 
 ## 🚀 Live Demo
-Check out the live demo here: [Demo Link](https://your-demo-link.com)
+Check out the live demo here: [Demo Link](https://freelancing-app-frontend-pi.vercel.app)
 
 ## 📸 Screenshot
 ![Project Screenshot](https://via.placeholder.com/800x400?text=Project+Screenshot)
